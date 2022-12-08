@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import queryString from "query-string";
 import "./chat.css";
 import io from "socket.io-client";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import InfoBar from "../infobar/infobar";
 import Input from "../input/input";
 import Messages from "../messages/messages";
@@ -14,7 +14,7 @@ let socket;
 const Chat = (props) => {
   let endpoint = "https://chatappserver-production.up.railway.app/";
   let location = useLocation();
-  const history = useHistory();
+  const history = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [name, setName] = useState("");
   // eslint-disable-next-line no-unused-vars
